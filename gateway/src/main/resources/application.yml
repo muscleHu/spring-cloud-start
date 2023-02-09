@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: eureka-client
+          uri: lb://eureka-client
+          predicates:
+            - Path=/eureka-client/**
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka # 指定服务注册中心
+  instance:
+    prefer-ip-address: true
