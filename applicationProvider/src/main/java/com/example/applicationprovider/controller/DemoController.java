@@ -44,6 +44,6 @@ public class DemoController {
 
     @RequestMapping("/sendMsg")
     public void sendKafkaMsg(){
-        kafkaSendService.sendMsg("{'1':访问1}");
+        kafkaSendService.sendMsg("哈哈哈哈哈哈哈哈哈");
     }
 }
